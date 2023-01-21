@@ -26,3 +26,5 @@ __○シングルカラーモード__
   
 ***
 色の設定は**colour_set.py**の中で行っています。
+***
+https://user-images.githubusercontent.com/76829653/213872643-5eddccd9-93d0-4f65-9985-a4210aa3de17.mp4
