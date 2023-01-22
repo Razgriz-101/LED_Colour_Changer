@@ -114,7 +114,7 @@ def rotation_colours():
                     if z > 4:
                         z -= 5
                     ar[j] = clr(*colours[i] + (x,))
-                    ar[j+5] = clr(*colours[y] + (x,))  # LEDは1列に5個設置しているため変数'j'に'5'を足していく
+                    ar[j+5] = clr(*colours[y] + (x,))  # LEDは1列に5個設置しているため変数「j」に「5」を足していく
                     ar[j+10] = clr(*colours[z] + (x,))
 
                 sm.put(ar, 0)
@@ -195,7 +195,7 @@ def switcher():
 
             time.sleep_ms(700)
 
-            if sw.value() == 0:  # 条件分岐開始からスイッチを離さなければ’multi.py’を終了させる
+            if sw.value() == 0:  # 条件分岐開始からスイッチを離さなければ「multi.py」を終了させる
 
                 for j in range(LEDS):  # 弱発光しているLEDを最大輝度にしモード移行を知らせる
                     ar[LEDS - 1 - j] = clr(*colours[j % len(colours)])
@@ -206,7 +206,7 @@ def switcher():
 
                 return 1
 
-            else:  # 条件分岐開始から約0.7秒以内にスイッチを離すことで七色サイクル('seven_colours')の実行待機へ移行する
+            else:  # 条件分岐開始から約0.7秒以内にスイッチを離すことで七色サイクル(seven_colours)の実行待機へ移行する
                 sw_cnt = 0
 
                 for j in range(LEDS):  # LEDを消灯することで七色サイクル待機状態へ移行したことを知らせる
@@ -229,10 +229,10 @@ def switcher():
                                 time.sleep_ms(500)
                                 break
 
-                            elif sw.value() == 0:  # スイッチが押されている場合'sw_cnt'に'1'を加算する
+                            elif sw.value() == 0:  # スイッチが押されている場合「sw_cnt」に「1」を加算する
                                 sw_cnt += 1
 
-                            else:  # スイッチが離されたら'sw_cnt'を初期化し　七色サイクルを実行する
+                            else:  # スイッチが離されたら「sw_cnt」を初期化し　七色サイクルを実行する
                                 sw_cnt = 0
                                 pattern -= 1
                                 seven_colours()
@@ -240,10 +240,10 @@ def switcher():
 
                         break
 
-        elif sw.value() == 0:  # スイッチが押されている場合'sw_cnt'に'1'を加算する
+        elif sw.value() == 0:  # スイッチが押されている場合「sw_cnt」に「1」を加算する
             sw_cnt += 1
 
-        else:  # 'sw_cnt'を初期化し次の発光パターンを実行する
+        else:  # 「sw_cnt」を初期化し次の発光パターンを実行する
             sw_cnt = 0
             pattern = (pattern + 1) % (len(patterns))
             patterns[pattern]()  # 変更した発光パターンでLEDを制御する

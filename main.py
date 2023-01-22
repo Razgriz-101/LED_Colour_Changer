@@ -20,7 +20,7 @@ def led_func():
         time.sleep_ms(100)
 
         mode = (mode + modes[mode % len(modes)].switcher()) % len(modes)
-        # 各モード終了時に'1'を返すことで'mode'の値を'modes'のインデックス内で切り替える
+        # 各モード終了時に「1」を返すことで「mode」の値を「modes」のインデックス内で切り替える
 
 
 if __name__ == "__main__":

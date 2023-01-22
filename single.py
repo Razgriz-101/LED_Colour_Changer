@@ -129,7 +129,7 @@ def switcher():
 
             time.sleep_ms(700)
 
-            if sw.value() == 0:  # 条件分岐開始からスイッチを離さなければ’single.py’を終了させる
+            if sw.value() == 0:  # 条件分岐開始からスイッチを離さなければ「single.py」を終了させる
 
                 for j in range(LEDS):  # 弱発光しているLEDを最大輝度にしモード移行を知らせる
                     ar[LEDS - 1 - j] = clr(*colours[j % len(colours)])
@@ -140,7 +140,7 @@ def switcher():
 
                 return 1
 
-            else:  # 条件分岐開始から約0.7秒以内にスイッチを離すことで'sw_cnt'を初期化したのち発光パターンを変更する
+            else:  # 条件分岐開始から約0.7秒以内にスイッチを離すことで「sw_cnt」を初期化したのち発光パターンを変更する
                 sw_cnt = 0
 
                 for j in range(LEDS):  # LEDを消灯することで発光パターンを変更すること知らせる
@@ -154,10 +154,10 @@ def switcher():
                     ar[j] = 0
                 sm.put(ar, 0)
 
-        elif sw.value() == 0:  # スイッチが押されている場合'sw_cnt'に'1'を加算する
+        elif sw.value() == 0:  # スイッチが押されている場合「sw_cnt」に「1」を加算する
             sw_cnt += 1
 
-        else:  # 'sw_cnt'を初期化し発光色を変更する
+        else:  # 「sw_cnt」を初期化し発光色を変更する
             sw_cnt = 0
             colour = (colour + 1) % len(colours)
             patterns[pattern]()  # 変更した色でLEDを制御する
